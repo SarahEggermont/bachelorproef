@@ -10,11 +10,17 @@ Gezien de expertise van we are, is er voor het platform gekozen voor een respons
 Voor de implementatie van authenticatie is er gebruik gemaakt van Auth0\footnote{\href{https://auth0.com/}{https://auth0.com/}}. De redenen waarom er voor Auth0 gekozen is, zijn: de mogelijkheid om aan te melden met een Google-account, makkelijke integratie in React en de mogelijkheid tot een gratis abonnement wanneer het aantal gebruikers onder de 7000 blijft, wat voor deze POC meer dan voldoende is.
 
 \subsection{Component libraries}
-Gezien de korte ontwikkeltijd die beschikbaar was, zijn Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}} en Material UI X\footnote{\href{https://mui.com/x/}{https://mui.com/x/}} component libraries gebruikt voor de ontwikkeling van deze website, om zo het ontwikkelproces te vergemakkelijken. Er is gekozen voor Material UI door diens universele look-and-feel, het ruime aanbod aan gratis componenten en de beschikbaarheid van grafische componenten. Daarnaast zijn deze componenten uitermate geschikt voor zowel mobiel als desktop gebruik.
+Gezien de korte ontwikkeltijd die beschikbaar was, zijn Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}} en Material UI X\footnote{\href{https://mui.com/x/}{https://mui.com/x/}} component libraries gebruikt voor de ontwikkeling van deze website, om zo het ontwikkelproces te vergemakkelijken. Er is gekozen voor Material UI wegens diens universele look-and-feel, het ruime aanbod aan gratis componenten en de beschikbaarheid van verschillende grafiek-componenten. Daarnaast zijn deze componenten uitermate geschikt voor zowel mobiel als desktop gebruik.
 
 \subsection{Databank}
 
 Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}. Er is in deze situatie gekozen voor een graaf databank omdat het zeer simpel op te zetten is en er geen databank-schema ontworpen moet worden, wat het dus zeer simpel maakt om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
+
+Daarnaast zal de analyse van de ingegeven sportdata ook makkelijker verlopen: er zullen geen complexe join-operaties aan te pas komen, wat bij een SQL-databank wel het geval zou zijn.
+
+\subsection{Deployment}
+
+De website wordt gedeployed met behulp van Vercel\footnote{\href{https://vercel.com/home}{https://vercel.com/home}}. De GitHub\footnote{\href{https://github.com/}{https://github.com/}}-repository van deze applicatie is gelinkt aan een Vercel-project, wat er voor zorgt dat de elke nieuwe commit op de main-branch steeds gedeployed zal worden. Dit maakt het zeer eenvoudig om te beheren. Move-it is te vinden op \href{https://move-it-ghent.vercel.app/}{https://move-it-ghent.vercel.app/}.
 
 \section{Opbouw van de applicatie}
 
