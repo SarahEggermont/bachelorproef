@@ -1,20 +1,6 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
 \label{ch:stand-van-zaken}
 
-% Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
-% dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
-% bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
-
-% Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
-
-% Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
-
-% Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
-
-% \textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
-
-% Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
-
 Deze paragraaf beschrijft de huidige kennis die er bestaat rond dit onderwerp. Eerst zal het belang van beweging gekaderd worden, waarna een link gelegd zal worden naar de invloed die het heeft op mentale gezondheid en op productiviteit. Daarna zal gamification zeer uitvoerig geanalyseerd worden, waarna ten slotte een blik zal geworpen worden op bestaande sportapplicaties.
 
 \section{Belang van beweging}
@@ -26,35 +12,41 @@ Daarnaast wordt voor mannelijke werknemers van middelbare leeftijd (32 - 69) uit
 
 Om de kans op gezondheidsproblemen te verkleinen moeten volwassenen, tussen de 18 en 64 jaar oud, volgens de ``World Health Organization'' (WHO) wekelijks 150 à 300 minuten sporten met gemiddelde intensiteit of 75 à 150 minuten met krachtige intensiteit \autocite{Bull2020}. Voor mensen met een beperking worden dezelfde hoeveelheden sport aangeraden, hoewel daar mogelijks samen met een medisch verantwoordelijke bekeken moet worden in welke mate dit mogelijk is, afhankelijk van de beperking. Voor zwangere of net bevallen vrouwen wordt er minstens 150 minuten per week, met gemiddelde intensiteit, aangeraden. In het algemeen kan dus gesteld worden dat voor elk individu, ongeacht de leeftijd, een bepaalde minimum hoeveelheid beweging aangeraden wordt.
 
-\textcite{Hallal2012} beschouwen 31,1\% van de wereldwijde bevolking als inactief. Dit wil zeggen dat, op het moment van onderzoek, bijna een derde van de volwassen wereldbevolking de vooropgestelde aanbevelingen van WHO, beschreven door \textcite{Bull2020}, niet haalt. Voor Europa ligt deze waarde zelfs op 34,8\% en zoals op Figuur \ref{fig:inactivity_inleiding} te zien is, ligt België nog een stuk boven de gemiddelde Europese waarde met 40\% à 49,9\%.
+\textcite{Hallal2012} beschouwen 31,1\% van de wereldwijde bevolking als inactief. Dit wil zeggen dat, op het moment van onderzoek, bijna een derde van de volwassen wereldbevolking de vooropgestelde aanbevelingen van WHO, beschreven door \textcite{Bull2020}, niet haalt. Voor Europa ligt deze waarde zelfs op 34,8\% en zoals op figuur \ref{fig:inactivity} te zien is, ligt België nog een stuk boven de gemiddelde Europese waarde met 40\% à 49,9\%.
+
+\begin{figure}[h]
+    \caption[Fysieke inactiviteit bij volwassenen wereldwijd]{Fysieke inactiviteit volwassenen (15+) wereldwijd, bij mannen (A) en vrouwen (B) \autocite{Bull2020}.}
+    \includegraphics[width=1\textwidth]{Inactiviteit}
+    \label{fig:inactivity}
+\end{figure}
 
 \subsection{Invloed van beweging op mentale gezondheid}
-Vele studies hebben aangetoond dat er endogene opioïden aangemaakt worden bij het sporten \autocite{Harber1984}. Deze chemische stoffen komen soms ook vrij als reactie van het menselijk lichaam op pijn, wat ervoor zorgt dat de pijnperceptie kan veranderen \autocite{Chaudhry2023, Dishman2009}. Daarnaast werden ze ook al geassocieerd met een toestand van plezier \autocite{Chaudhry2023}.
-Deze endogene opioïden (endorfines, enkefalines en dynorfines) zijn peptiden die biochemische eigenschappen hebben die lijken op opiaten zoals heroïne en morfine. Vooral endorfine als gevolg van training wordt in verband gebracht met zowel fysiologische als psychologische veranderingen, wat dus een invloed heeft op de psychologische staat van een persoon \autocite{Dishman2009}.
+Vele studies hebben aangetoond dat er endogene opioïden aangemaakt worden bij het sporten \autocite{Harber1984}. Deze chemische stoffen komen soms ook vrij als reactie van het menselijk lichaam op pijn, waar ze ervoor zorgen dat de pijnperceptie kan veranderen \autocite{Chaudhry2023, Dishman2009}. Daarnaast werden ze ook al geassocieerd met een toestand van plezier \autocite{Chaudhry2023}.
+Deze endogene opioïden (endorfines, enkefalines en dynorfines) zijn peptiden die biochemische eigenschappen hebben die lijken op opiaten zoals heroïne en morfine. Vooral endorfine als gevolg van training wordt in verband gebracht met zowel fysiologische als psychologische veranderingen, wat dus een invloed heeft op de mentale staat van een persoon \autocite{Dishman2009}.
 
 Daarnaast stellen \textcite{Mahindru2023} dat voldoende lichaamsbeweging kan helpen met het verbeteren van slaap, wat op zijn beurt zorgt voor het reguleren van normale hormonale en metabolische processen \autocite{Dolezal2017}. Te weinig slapen heeft zelfs een negatieve impact op de economie: het kost Amerikaanse bedrijven en gezondheidszorginstanties jaarlijks miljarden dollars \autocite{Dolezal2017}.
 
 
 \subsection{Invloed van beweging op productiviteit}
-Wanneer de algemene gezondheid van werknemers slecht is, brengt dit kosten mee voor het bedrijf. \textcite{Sjoegaard2016} beschrijven hoe deze kosten gerelateerd zijn aan de mentale en fysieke afwezigheid van werknemers tijdens het werk, met een verminderde productiviteit tot gevolg. Echter, voor personen die sedentair werk uitvoeren en voornamelijk aan een computer werken, zorgt een verhoogde hoeveelheid sport tijdens de vrije tijd voor minder stress en meer energie op de werkvloer \autocite{Hansen2009}. Daarnaast wordt er voor mensen die in de gezondheidszorg werken, na drie maanden consistent sporten, 8\% productiviteitsstijging waargenomen \autocite{Sjoegaard2016}.
+Wanneer de algemene gezondheid van werknemers slecht is, brengt dit kosten mee voor het bedrijf. \textcite{Sjoegaard2016} beschrijven hoe deze kosten gerelateerd zijn aan de mentale en fysieke afwezigheid van werknemers tijdens het werk, met een verminderde productiviteit tot gevolg. Voor personen die sedentair werk uitvoeren en voornamelijk aan een computer werken, zorgt een verhoogde hoeveelheid sport tijdens de vrije tijd echter voor minder stress en meer energie op de werkvloer \autocite{Hansen2009}. Daarnaast wordt er voor mensen die in de gezondheidszorg werken, na drie maanden consistent sporten, 8\% productiviteitsstijging waargenomen \autocite{Sjoegaard2016}.
 
 Op die manier leidt het invoeren van regelmatige beweging, door middel van op voorhand opgestelde oefeningen en een zorgvuldige begeleiding, volgens \textcite{Cancelliere2011} tot een positief effect op de productiviteit. In die mate dat \textcite{Sjoegaard2016} stellen dat dit effect de eventuele uitgaven in verband met sportactiviteiten overstijgt.
 
 \section{Gamification}
 Volgens \textcite{Deterding2011} is gamification te beschrijven als het gebruiken van speldesignelementen in een niet-spelgerelateerde context.
 
-De laatste jaren wint gamification aan populariteit als manier om gebruikersengagement te ondersteunen en als positieve manieren in het gebruik van diensten te verbeteren \autocite{Hamari2014}.
+De laatste jaren wint gamification aan populariteit als manier om gebruikersengagement te ondersteunen en als positieve manieren om het gebruik van diensten te verbeteren \autocite{Hamari2014}.
 
 Gamification bestaat uit drie hoofdonderdelen: de gebruikte techniek, de psychologische uitkomsten en de verdere invloed op het gedrag \autocite{Hamari2014}. Daarnaast zijn sociale aspecten ook essentieel: door het ontstaan van een competitie streven mensen ernaar erkenning te ontvangen \autocite{Hamari2013}.
 
 \subsection{Meest gebruikte technieken}
-Volgens \textcite{Legaki2020} kunnen gamificationtechnieken in drie types gecategoriseerd worden: focus op prestaties of uitdagingen, onderdompeling in een verhaal en gebaseerd op sociale interactie.
+Volgens \textcite{Legaki2020} kunnen gamificationtechnieken in drie types gecategoriseerd worden: focus op prestaties of uitdagingen, onderdompeling in een verhaal of gebaseerd op sociale interactie.
 
 \subsubsection{Punten en scoreborden}
-Volgens \textcite{Hamari2014} zijn punten en scoreborden de meest voorkomende technieken. Punten worden toegekend voor het uitvoeren van vooropgestelde taken, ze focussen dus op prestatie. Aan de hand van deze punten kunnen scoreborden worden opgesteld. Deze scoreborden kunnen de resultaten van meerdere gebruikers tegen elkaar opzetten, wat voor een onderlinge competitie zorgt. Ditzelfde principe kan ook toegepast worden op eigen resultaten, waarbij een gebruiker steeds zichzelf probeert te overtreffen.
+Volgens \textcite{Hamari2014} zijn de combinatie van punten en scoreborden de meest voorkomende techniek. Punten worden toegekend voor het uitvoeren van vooropgestelde taken, ze focussen dus op prestatie. Aan de hand van deze punten kunnen scoreborden worden opgesteld. Deze scoreborden kunnen de resultaten van meerdere gebruikers tegen elkaar opzetten, wat voor een onderlinge competitie zorgt. Ditzelfde principe kan ook toegepast worden op eigen resultaten, waarbij een gebruiker steeds zichzelf probeert te overtreffen.
 
 \subsubsection{Uitdagingen en badges}
-Badges en uitdagingen binnen een spelcontext, tonen veel gelijkenissen met bepaalde marketing tools, zoals klantenkaarten waarop stempels verzameld moeten worden \autocite{Nunes2006}. Dit fenomeen noemen \textcite{Nunes2006} het ``begiftigde vooruitgangseffect'', hierbij zullen mensen meer volharding tonen om een doel te bereiken als ze op een kunstmatige manier vooruitgang kunnen merken richting dat doel.
+Badges en uitdagingen binnen een spelcontext, tonen veel gelijkenissen met bepaalde marketing tools, zoals klantenkaarten waarop stempels verzameld moeten worden \autocite{Nunes2006}. Dit fenomeen noemen \textcite{Nunes2006} het ``begiftigde vooruitgangseffect'', hierbij tonen mensen meer volharding om een doel te bereiken als ze op een kunstmatige manier vooruitgang kunnen merken richting dat doel.
 
 Een voorbeeld van dit type gamification is \href{https://foursquare.com/}{Foursquare}, deze dienst is gebaseerd op mensen die badges ontgrendelen door bepaalde locaties te bezoeken in de ``echte'' wereld \autocite{Hamari2011}. Maar ook Apple Conditie past dit principe toe met hun badges \autocite{Ha2020}. Op figuur \ref{fig:apple_badges} is zichtbaar hoe deze medailles onderverdeeld worden in meerdere categorieën.
 
@@ -88,22 +80,25 @@ Gamification is sterk gebaseerd op psychologie. Wanneer psychologische aspecten 
 Een van de oudste en meest bekende motivatietheorieën is afkomstig van psycholoog Abraham Maslow \autocite{Richter2014}. Volgens hem handelen mensen met als doel om fysieke en psychologische behoeften te bevredigen. Maslow spreekt over vijf niveaus van noden die menselijke activiteiten aansturen, gaande van fysieke tot persoonlijke behoeften (zie figuur \ref{fig:people-hierarchy}) \autocite{Lilienfeld2014}.
 
 Op basis van dit model, hebben \textcite{Siang2003} een hiërarchie gemaakt die op gamers van toepassing is (zie figuur \ref{fig:gamers-hierarchy}).
-Hiervoor geldt dat de type behoeftes in de onderste rijen van de piramide moeten worden vervuld voor de hogere niveaus in beschouwing kunnen worden genomen \autocite{Richter2014}.
-Eerst zoeken spelers naar informatie om de regels van het spel te begrijpen. Daarna heeft een speler nood aan veiligheid om door te zetten en mogelijks te winnen. Ten derde moet een speler zich erbij horen voelen, waarna die zich goed moet voelen tijdens het spelen van het spel, er moet een gevoel van waardering aanwezig zijn. Op het volgende level willen spelers grotere uitdagingen en willen ze meer begrijpen over het spel en diens strategieën. Het voorlaatste niveau gaat over de wens voor bijvoorbeeld goede graphics, bijpassende muziek en geluidseffecten. Ten slotte willen spelers een soort van perfectie bereiken binnen deze virtuele wereld, waarin alles kan en mag binnen de regels van het spel \autocite{Greitzer2007, Siang2003}.
+Voor beide modellen geldt dat de types behoeftes in de onderste rijen van de piramide moeten worden vervuld voor de hogere niveaus in beschouwing kunnen worden genomen \autocite{Richter2014}.
+Eerst zoeken spelers naar informatie om de regels van het spel te begrijpen. Daarna heeft een speler nood aan veiligheid om door te zetten en mogelijks te winnen. Ten derde moet een speler het gevoel hebben erbij te horen, waarna die zich goed moet voelen tijdens het spelen van het spel: er moet een gevoel van waardering aanwezig zijn. Op het volgende level willen spelers grotere uitdagingen en willen ze meer begrijpen over het spel en diens strategieën. Het voorlaatste niveau gaat over de wens voor bijvoorbeeld goede graphics, bijpassende muziek en geluidseffecten. Ten slotte willen spelers een soort van perfectie bereiken binnen deze virtuele wereld, waarin alles kan en mag binnen de regels van het spel \autocite{Greitzer2007, Siang2003}.
 
 Bij het implementeren van gamification in een sportplatform is het dus belangrijk om ervoor te zorgen dat aan de onderste zes niveaus (zie figuur \ref{fig:gamers-hierarchy}) voldaan is, zodat mensen zichzelf ook willen verbeteren via het platform.
 
-\begin{figure}[h]
-    \caption[Behoeften-hiërarchie algemeen]{De  niveaus van behoeften die menselijke activiteiten aansturen \autocite{Lilienfeld2014}.}
-    \includegraphics[width=1\textwidth]{PyramidPeople}
-    \label{fig:people-hierarchy}
-\end{figure}
-
-
-\begin{figure}[h]
-    \caption[Behoeften-hiërarchie gamers]{De hiërarchie van behoeften van gamers \autocite{Richter2014}.}
-    \includegraphics[width=1\textwidth]{PyramidGamers}
-    \label{fig:gamers-hierarchy}
+\begin{figure}[htbp]
+    \begin{minipage}[t]{0.48\linewidth} % adjust width as needed
+        \centering
+        \caption[Behoeften-hiërarchie algemeen]{De  niveaus van behoeften die menselijke activiteiten aansturen \autocite{Lilienfeld2014}.}
+        \includegraphics[width=1\textwidth]{PyramidPeople}
+        \label{fig:people-hierarchy}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth} % adjust width as needed
+        \centering
+        \caption[Behoeften-hiërarchie gamers]{De hiërarchie van behoeften van gamers \autocite{Richter2014}.}
+        \includegraphics[width=1\textwidth]{PyramidGamers}
+        \label{fig:gamers-hierarchy}
+    \end{minipage}
 \end{figure}
 
 \subsection{Invloed op gedrag}
@@ -114,7 +109,7 @@ Anderzijds zal het verwijderen van spelelementen uit een dienst schadelijke gevo
 
 \subsubsection{Geslacht}
 
-\textcite{Venkatesh2000} bespreken hoe het proces om een beslissing te maken, verschilt per geslacht. Zo is bijvoorbeeld gevonden dat mannen meer instrumenteel of proactief gedrag vertonen, wat wilt zeggen dat ze vaker in de aanval of verdediging gaan om zo anderen onder druk te zetten om uiteindelijk op die manier hun doel te bereiken of zin te krijgen \autocite{Spence1980}. Daarnaast stellen \textcite{Hoffman1972, Minton1980} dat ze ook meer taak- en prestatiegericht zijn dan vrouwen. Daartegenover staat dat voor vrouwen de behoefte voor verbondenheid een belangrijkere rol speelt \autocite{Hoffman1972} en ze volgens \textcite{Minton1980, Spence1980} ook meer gericht zijn op sociale relaties. Dit betekent dat vrouwen vatbaarder zijn voor sociale invloed van bijvoorbeeld gamification.
+\textcite{Venkatesh2000} bespreken hoe het proces om een beslissing te maken, verschilt per geslacht. Zo is bijvoorbeeld gevonden dat mannen vaker instrumenteel of proactief gedrag vertonen, wat wilt zeggen dat ze vaker in de aanval of verdediging gaan om zo anderen onder druk te zetten om uiteindelijk op die manier hun doel te bereiken of zin te krijgen \autocite{Spence1980}. Daarnaast stellen \textcite{Hoffman1972, Minton1980} dat ze ook meer taak- en prestatiegericht zijn dan vrouwen. Daartegenover staat dat voor vrouwen de behoefte voor verbondenheid een belangrijkere rol speelt \autocite{Hoffman1972} en ze volgens \textcite{Minton1980, Spence1980} ook meer gericht zijn op sociale relaties. Dit betekent dat vrouwen vatbaarder zijn voor sociale invloed van bijvoorbeeld gamification.
 
 In de huidige online wereld met al diens sociale features, blijkt dat vrouwen de meer sociaal gemotiveerde gebruikers zijn, terwijl mannen eerder focussen op pragmatisch gebruik \autocite{Haferkamp2012, Muscanell2012}. Daartegenover staat dat in sommige studies van \textcite{Wang2008} geconcludeerd wordt dat mannen, in bepaalde contexten zoals online leren, beïnvloed worden door sociale factoren. \textcite{Koivisto2014} besluiten hierover dat het invoeren van sociale features essentieel is als men ook vrouwelijke gebruikers wil betrekken.
 
@@ -135,7 +130,7 @@ Wanneer een dienst, zoals het aanbieden van een platform met gamification, erken
 
 Anderzijds is er sociale invloed, wat verwijst naar de perceptie van een individu over het belang dat anderen hechten aan een bepaald doelgedrag en of ze verwachten dat iemand dat gedrag zal vertonen \autocite{Ajzen1991}. Specifiek voor een platform dat gamification implementeert, kan er sociale invloed ontstaan door het zien van wat andere gebruikers op het platform presteren. Hierdoor wordt namelijk een verwachtingspatroon gecreëerd en zetten gebruikers elkaar aan tot het behalen van een bepaald doelgedrag, zoals vaker sporten.
 
-Een keerzijde van deze sociale interactie, kan zijn dat het mensen afschrikt. Het kan namelijk zo zijn dat mensen die pas beginnen met sporten zichzelf zullen spiegelen aan anderen die al regelmatig sporten. Hier zal dus de nodige aandacht aan moeten worden besteed.
+Een keerzijde van deze sociale interactie, kan zijn dat het mensen afschrikt. Het kan namelijk zo zijn dat mensen die pas beginnen met sporten zichzelf zullen spiegelen aan anderen die al regelmatig sporten. Hier moet dus de nodige aandacht aan besteed worden.
 
 \section{Bestaande sportapplicaties}
 Hieronder volgt een diverse greep uit de bestaande mobiele en desktop sportapplicaties en -platformen en welke spelelementen daarin gebruikt worden.

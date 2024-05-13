@@ -1,26 +1,28 @@
 \chapter{\IfLanguageName{dutch}{Proof of concept}{Proof of concept}}%
 \label{ch:proofofconcept}
 
+Deze paragraaf beschrijft eerst welke technologieën gebruik zijn voor het ontwikkelen van Move-it. Daarna wordt de opbouw van de webapplicatie besproken en geïllustreerd met schermafbeeldingen.
+
 \section{Gekozen technologieën}
 
 \subsection{Framework}
 
-Gezien de expertise van we are, is er voor het platform gekozen voor een responsive React\footnote{\href{https://react.dev/}{https://react.dev/}}-website. Hiervoor is gebruik gemaakt van TypeScript \footnote{\href{https://www.typescriptlang.org/}{https://www.typescriptlang.org/}}.
+Gezien de expertise van \href{https://www.we-are.be/}{we are}, is er voor het platform gekozen voor een responsive React\footnote{\href{https://react.dev/}{https://react.dev/}}-website. Hiervoor is gebruik gemaakt van TypeScript \footnote{\href{https://www.typescriptlang.org/}{https://www.typescriptlang.org/}}.
 
 Voor de implementatie van authenticatie is er gebruik gemaakt van Auth0\footnote{\href{https://auth0.com/}{https://auth0.com/}}. De redenen waarom er voor Auth0 gekozen is, zijn: de mogelijkheid om aan te melden met een Google-account, makkelijke integratie in React en de mogelijkheid tot een gratis abonnement wanneer het aantal gebruikers onder de 7000 blijft, wat voor deze POC meer dan voldoende is.
 
 \subsection{Component libraries}
-Gezien de korte ontwikkeltijd die beschikbaar was, zijn Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}} en Material UI X\footnote{\href{https://mui.com/x/}{https://mui.com/x/}} component libraries gebruikt voor de ontwikkeling van deze website, om zo het ontwikkelproces te vergemakkelijken. Er is gekozen voor Material UI wegens diens universele look-and-feel, het ruime aanbod aan gratis componenten en de beschikbaarheid van verschillende grafiek-componenten. Daarnaast zijn deze componenten uitermate geschikt voor zowel mobiel als desktop gebruik.
+Gezien de korte ontwikkeltijd die beschikbaar was, zijn Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}} en Material UI X\footnote{\href{https://mui.com/x/}{https://mui.com/x/}} component libraries gebruikt voor de ontwikkeling van deze website, om zo het ontwikkelproces te vergemakkelijken. Er is gekozen voor Material UI wegens diens universele look-and-feel, het ruime aanbod aan gratis componenten en de beschikbaarheid van verschillende grafiek-componenten. Daarnaast zijn deze componenten uitermate geschikt voor zowel mobiel als desktop gebruik, wat de ``User Experience'' (UX) verbetert.
 
 \subsection{Databank}
 
-Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}. Er is in deze situatie gekozen voor een graaf databank omdat het zeer simpel op te zetten is en er geen databank-schema ontworpen moet worden, wat het dus zeer simpel maakt om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
+Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}. Er is in deze situatie gekozen voor een graaf databank omdat het zeer simpel op te zetten is en er geen databank-schema ontworpen moet worden, wat er dus voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
 
-Daarnaast zal de analyse van de ingegeven sportdata ook makkelijker verlopen: er zullen geen complexe join-operaties aan te pas komen, wat bij een SQL-databank wel het geval zou zijn.
+Daarnaast zal de analyse van de ingegeven sportdata ook makkelijker verlopen: er zullen geen complexe join-operaties aan te pas komen om bijvoorbeeld alle activiteiten van de deelnemers van een team op te vragen, wat bij een SQL-databank wel het geval zou zijn.
 
 \subsection{Deployment}
 
-De website wordt gedeployed met behulp van Vercel\footnote{\href{https://vercel.com/home}{https://vercel.com/home}}. De GitHub\footnote{\href{https://github.com/}{https://github.com/}}-repository van deze applicatie is gelinkt aan een Vercel-project, wat er voor zorgt dat de elke nieuwe commit op de main-branch steeds gedeployed zal worden. Dit maakt het zeer eenvoudig om te beheren. Move-it is te vinden op \href{https://move-it-ghent.vercel.app/}{https://move-it-ghent.vercel.app/}.
+De website wordt gedeployed met behulp van Vercel\footnote{\href{https://vercel.com/home}{https://vercel.com/home}}. De GitHub\footnote{\href{https://github.com/}{https://github.com/}}-repository van deze applicatie is gelinkt aan een Vercel-project, wat er voor zorgt dat de elke nieuwe commit op de main-branch steeds gedeployed zal worden. Dit maakt het zeer eenvoudig om te beheren. Move-it is terug te vinden op \href{https://move-it-ghent.vercel.app/}{https://move-it-ghent.vercel.app/}.
 
 \section{Opbouw van de applicatie}
 
@@ -41,7 +43,7 @@ Op het dashboard is de meeste informatie te zien: zowel persoonlijke evolutie ov
     \label{fig:personalRanking}
 \end{figure}
 
-Op het dashboard is vooral ingezet op scoreborden en het visualiseren van persoonlijke vooruitgang. De punten zijn hier in de vorm van gepresteerde uren gegeven. Door persoonlijke vooruitgang in een grafiek te tonen, kan een gebruiker gestimuleerd worden om zichzelf steeds te proberen overtreffen.
+Op het dashboard is vooral ingezet op scoreborden en het visualiseren van persoonlijke vooruitgang. De punten zijn hier in de vorm van gepresteerde uren weergegeven. Door persoonlijke vooruitgang in een grafiek te tonen, kan een gebruiker gestimuleerd worden om zichzelf steeds te proberen overtreffen door de lijn van de linkse grafiek naar boven te laten wijzen.
 
 \begin{figure}[h]
     \caption[Overzicht prestaties dashboard website]{Overzicht van gepresteerde uren de afgelopen week en van het type activiteiten sinds de lancering van de applicatie, gezien vanop een laptop.}
@@ -68,7 +70,7 @@ Op het persoonlijk overzicht is een lijst van de gepresteerde activiteiten te zi
 
 Dit overzicht is een simpele oplijsting van alle teamleden waartoe de aangemelde gebruiker behoort (figuur \ref{fig:team}).
 
-In de toekomst zou dit uitgebreid kunnen worden met een overzicht van de prestaties van een team, zodat er ook binnen een team gamification speelt en wat mogelijks tot meer motivatie kan leiden.
+In de toekomst zou dit uitgebreid kunnen worden met een overzicht van de prestaties van een team, zodat er ook binnen een team gamification speelt, wat mogelijks tot nog meer motivatie kan leiden.
 
 \begin{figure}[h]
     \caption[Overzicht van teamleden]{Overzicht van teamleden in de applicatie, gezien vanop een laptop. Mailadressen zijn wazig gemaakt om privacy-redenen.}
