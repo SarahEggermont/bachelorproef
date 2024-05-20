@@ -1,41 +1,47 @@
 \chapter{\IfLanguageName{dutch}{Proof of concept}{Proof of concept}}%
 \label{ch:proofofconcept}
 
-Dit hoofdstuk beschrijft eerst welke technologieën gebruik zijn voor het ontwikkelen van ``Move-it!''. Daarna wordt de opbouw van de webapplicatie besproken en geïllustreerd met schermafbeeldingen.
+Dit hoofdstuk beschrijft eerst welke technologieën gebruik zijn voor het ontwikkelen van ``Move-it!''. Daarna wordt de opbouw van de webapplicatie besproken en geïllustreerd met schermafbeeldingen. Daarbij wordt ook telkens geduid welke gamificationtechnieken gebruikt zijn.
 
 \section{Gekozen technologieën}
 
 \subsection{Framework}
 
-Gezien de expertise van \href{https://www.we-are.be/}{we are}, is er voor het platform gekozen voor een responsive React\footnote{\href{https://react.dev/}{https://react.dev/}}-website. Hiervoor is gebruik gemaakt van TypeScript \footnote{\href{https://www.typescriptlang.org/}{https://www.typescriptlang.org/}}.
+Gezien de expertise van \href{https://www.we-are.be/}{we are}, is er voor het platform gekozen voor een responsive React\footnote{\href{https://react.dev/}{https://react.dev/}}-website. React is een gratis en open source JavaScript library, die gebruikt wordt voor het ontwikkelen van gebruikersinterfaces door middel van componenten. In plaats van JavaScript, is er voor dit projectechter gebruik gemaakt van TypeScript \footnote{\href{https://www.typescriptlang.org/}{https://www.typescriptlang.org/}}. TypeScript is een object-georiënteerde programmeertaal, ontwikkeld door Microsoft Corporation. Er is voor TypeScript gekozen wegens diens type-safety. Dit wil zeggen dat type-errors vroeger in het ontwikkelproces opgevangen kunnen worden, wat de ontwikkeltijd bevordert.
 
 Voor de implementatie van authenticatie is er gebruik gemaakt van Auth0\footnote{\href{https://auth0.com/}{https://auth0.com/}}. De redenen waarom er voor Auth0 gekozen is, zijn: de mogelijkheid om aan te melden met een Google-account, efficiënte integratie in React en de mogelijkheid tot een gratis abonnement wanneer het aantal gebruikers onder de 7000 blijft, wat voor deze POC meer dan voldoende is.
 
 \subsection{Component libraries}
+Een component library is een set van voorgedefinieerde, geteste en gedocumenteerde ``User Interface'' (UI) componenten, die makkelijk hergebruikt kunnen worden over een hele applicatie\footnote{\href{https://www.uxpin.com/studio/blog/ui-component-library/}{https://www.uxpin.com/studio/blog/ui-component-library/}}.
 De Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}} en Material UI X\footnote{\href{https://mui.com/x/}{https://mui.com/x/}} component libraries zijn gebruikt voor de ontwikkeling van deze website. Er is gekozen voor Material UI wegens diens universele look-and-feel, het ruime aanbod aan gratis componenten en de beschikbaarheid van verschillende grafiek-componenten. Daarnaast zijn deze componenten uitermate geschikt voor zowel mobiel als desktop gebruik, wat de ``User Experience'' (UX) verbetert.
 
 \subsection{Databank}
 
-Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}. Er is in deze situatie gekozen voor een graaf databank omdat er geen databank-schema ontworpen moet worden, wat er voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
+Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}.
+Een graafdatabank is een NoSQL-database, ook wel niet-relationele databank genoemd. In dit soort database vormen nodes gekoppeld door relaties samen een verbonden  structuur\footnote{\href{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}}.
+
+Er is in deze situatie gekozen voor een graaf databank omdat er geen databank-schema ontworpen moet worden, wat er voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
 
 Daarnaast zal de analyse van de ingegeven sportdata ook efficiënter verlopen: er zullen geen complexe join-operaties aan te pas komen om bijvoorbeeld alle activiteiten van de deelnemers van een team op te vragen, wat bij een SQL-databank wel het geval zou zijn. Dit komt de kwaliteit van de analyse ten goede.
 
 \subsection{Deployment}
 
-De website wordt gedeployed met behulp van Vercel\footnote{\href{https://vercel.com/home}{https://vercel.com/home}}. De GitHub\footnote{\href{https://github.com/}{https://github.com/}}-repository van deze applicatie is gelinkt aan een Vercel-project, wat er voor zorgt dat de elke \linebreak nieuwe commit op de main-branch steeds gedeployed zal worden. Dit maakt het zeer beheersvriendelijk.
+De website wordt gedeployed met behulp van Vercel, die een frontend-as-a-service product aanbiedt\footnote{\href{https://vercel.com/home}{https://vercel.com/home}}. De GitHub\footnote{\href{https://github.com/}{https://github.com/}}-repositoryvan deze applicatie is gelinkt aan een Vercel-project, wat er voor zorgt dat elke nieuwe commit op de main-branch steeds gedeployed zal worden. Dit maakt het zeer beheersvriendelijk.
 
 ``Move-it!'' is terug te vinden op \href{https://move-it-ghent.vercel.app/}{https://move-it-ghent.vercel.app/}.
 
 \section{Opbouw van de applicatie en geïntegreerde gamificationtechnieken}
 
-De applicatie is opgesteld op basis van de volgende bouwstenen: een centraal dashboard, een overzicht van eigen prestaties, een oplijsting van de teamleden en een profielpagina.
+De applicatie is opgesteld uit twee basis bouwstenen: een navigatiemenu bovenaan, en een centrale pagina. Afhankelijk van de gekozen navigatie, zal deze centrale pagina een dashboard, een overzicht van eigen prestaties, een oplijsting van de teamleden of een profielpagina vertonen.
+
+Er is tijdens de ontwikkelingsfase ook aandacht besteed aan mobiele gebruikers, zo zal de webapplicatie ook mee schalen wanneer deze van op een kleiner scherm opgeroepen wordt.
 
 \subsection{Dashboard}
-Op het dashboard is de meeste informatie te zien: zowel persoonlijke evolutie over één week en een overzicht van het type uitgevoerde activiteiten (zie figuur \ref{fig:graphs}) als de team en persoonlijke ranking (zie figuur \ref{fig:personalRanking} en \ref{fig:teamRanking}) zijn er te vinden.
+Op het dashboard is de meeste informatie te zien: zowel persoonlijke evolutie over één week en een overzicht van het type uitgevoerde activiteiten (zie figuur \ref{fig:graphs}) als de team en persoonlijke ranking (zie figuur \ref{fig:personalRanking} en \ref{fig:teamRanking}) zijn er te vinden. Dit is het centrale punt voor de gamification.
 
 De persoonlijke vooruitgang wordt in een grafiek weergegeven, waardoor een gebruiker gestimuleerd kan worden om zichzelf steeds te proberen overtreffen. \linebreak \textcite{Schiewe2020} hebben namelijk aangetoond dat de visualisatie van sportdata sporters op meerdere vlakken ten goede komt, waaronder hun motivatie.
 
-Bij de team- en persoonlijke ranking worden de punten in de vorm van gepresteerde uren weergegeven. Om kleinere teams evenveel kans te geven, houdt de teamranking rekening met de grootte van het team bij de berekening. Op die manier blijft een eerlijke competitie behouden, wat volgens \textcite{Ivanova2019} de motivatie verhoogt.
+Bij de team- en persoonlijke ranking worden de punten in de vorm van gepresteerde uren weergegeven. Om kleinere teams evenveel kans te geven, houdt de teamranking rekening met de grootte van het team bij de berekening. Concreet wil dit zeggen dat het gemiddeld aantal minuten beweging per gebruiker wordt gebruikt voor deze ranking, in plaats van de absolute som van de gepresteerde minuten van alle gebruikers van een team. Op die manier blijft een eerlijke competitie behouden, wat volgens \textcite{Ivanova2019} de motivatie verhoogt.
 
 \begin{figure}[h]
     \caption[Team ranking]{De team ranking, gezien vanop een laptop.}
@@ -49,7 +55,7 @@ Bij de team- en persoonlijke ranking worden de punten in de vorm van gepresteerd
     \label{fig:personalRanking}
 \end{figure}
 
-Op het dashboard is daarom wat betreft gamificationtechnieken vooral ingezet op scoreborden en het visualiseren van persoonlijke vooruitgang.
+Samengevat, is op het dashboard wat betreft gamificationtechnieken vooral ingezet op scoreborden en het visualiseren van persoonlijke vooruitgang, door middel van de scoreborden en de grafieken.
 
 \begin{figure}[h]
     \caption[Overzicht prestaties dashboard website]{Overzicht van gepresteerde uren de afgelopen week en van het type activiteiten sinds de lancering van de applicatie, gezien vanop een laptop.}
@@ -58,7 +64,7 @@ Op het dashboard is daarom wat betreft gamificationtechnieken vooral ingezet op 
 \end{figure}
 
 \subsection{Persoonlijk overzicht}
-Op het persoonlijk overzicht is een lijst van de gepresteerde activiteiten te zien (zie figuur \ref{fig:performances} en figuur \ref{fig:performancesMobile}), en kunnen gebruikers ook hun prestaties ingeven. Hier is voldoende ruimte voorzien voor de ingave van technische gegevens, zoals gemiddelde hartslag en hoogtemeters. Afhankelijk van het type activiteit, en wanneer een afstand en duur ingegeven zijn, berekent de applicatie ook een gemiddelde snelheid. Zo kunnen frequente sporters een eventuele vooruitgang opmerken.
+Op het persoonlijk overzicht is een lijst van de eigen gepresteerde activiteiten te zien (zie figuur \ref{fig:performances} en figuur \ref{fig:performancesMobile}), en kunnen gebruikers ook hun prestaties ingeven. Hier is voldoende ruimte voorzien voor het invullen van technische gegevens, zoals de gemiddelde hartslag en hoogtemeters. Afhankelijk van het type activiteit, en wanneer een afstand en duur ingegeven zijn, berekent de applicatie ook een gemiddelde snelheid. Zo kunnen frequente sporters een eventuele vooruitgang opmerken, wat ook motiverend kan werken.
 
 \begin{figure}[h]
     \caption[Overzicht activiteiten website]{Overzicht van gepresteerde activiteiten in de applicatie, gezien vanop een laptop.}
@@ -77,13 +83,14 @@ Op het persoonlijk overzicht is een lijst van de gepresteerde activiteiten te zi
 Dit overzicht is een oplijsting van alle teamleden waartoe de aangemelde gebruiker behoort (zie figuur \ref{fig:team}).
 
 In de toekomst zou dit uitgebreid kunnen worden met een overzicht van de prestaties van de gebruikers binnen een team, zodat er ook binnen een team gamification speelt, wat mogelijks tot nog meer motivatie kan leiden.
+Daarnaast zou ook de mogelijkheid toegevoegd kunnen worden om vanuit de applicatie andere mensen uit te nodigen. Zo kunnen reeds deelnemende gebruikers ook hun collega's, vrienden en/of familie uitnodigen.
 
 \begin{figure}[h]
-    \caption[Overzicht van teamleden]{Overzicht van teamleden in de applicatie, gezien vanop een laptop. Mailadressen zijn wazig gemaakt om privacy-redenen.}
+    \caption[Overzicht van teamleden]{Overzicht van teamleden in de applicatie, gezien vanop een laptop. Mailadressen zijn onherkenbaar gemaakt om privacy-redenen.}
     \includegraphics[width=1\textwidth]{MyTeam}
     \label{fig:team}
 \end{figure}
 
 \subsection{Profiel pagina}
 
-Op deze pagina kan een gebruiker een avatar, team en naam kiezen waarmee die weergegeven wordt.
+Op deze pagina kan een gebruiker een avatar en naam kiezen waarmee die weergegeven wordt. Daarnaast moet een gebruiker bij de eerste aanmelding ook een team kiezen.
