@@ -17,6 +17,18 @@ De Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}
 
 \subsection{Databank}
 
+Een databank is een grote verzameling van gegevens. Een "Database Managemend System" (DBMS) is een systeem waarmee op een georganiseerde manier data beheerd, opgevraagd en opgeslagen kan worden. De betrouwbarheid van een databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd:
+
+\begin{itemize}
+    \item \textbf{Atomiciteit}: elke transactie die uitgevoerd wordt, wordt als een ondeelbare eenheid beschouwd. Dit wil zeggen dat een transactie oftewel helemaal, oftewel helemaal niet uitgevoerd wordt.
+    \item \textbf{Consistentie}: dit garandeert dat een databank zich voor en na elke transactie in een consistente status bevindt.
+    \item \textbf{Isolatie}: dit zorgt er voor dat transacties onafhankelijk van elkaar worden uitgevoerd. Dit wil zeggen dat concurrerende transacties na elkaar uitgevoerd worden.
+    \item \textbf{Duurzaamheid}: nadat een transactie gecommit is, zal deze permament in de databank opgeslagen worden, zelfs in het geval van bijvoorbeeld een systeemcrash of het uitvallen van de stroom. 
+\end{itemize}
+
+Datbanken kunnen onderverdeeld worden in twee grote categorieën: relationele en niet-relationele databanken.
+Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model. 
+
 Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}.
 Een graafdatabank is een NoSQL-database, ook wel niet-relationele databank genoemd. In dit soort database vormen nodes gekoppeld door relaties samen een verbonden  structuur\footnote{\href{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}}.
 
