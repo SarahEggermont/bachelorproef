@@ -17,26 +17,26 @@ De Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}
 
 \subsection{Databank}
 
-Een databank is een grote verzameling van gegevens. Een "Database Managemend System" (DBMS) is een systeem waarmee op een georganiseerde manier data beheerd, opgevraagd en opgeslagen kan worden. 
+Een databank is een grote verzameling van gegevens. Een "Database Managemend System" (DBMS) is een systeem waarmee op een georganiseerde manier data beheerd, opgevraagd en opgeslagen kan worden.
 
 Datbanken kunnen onderverdeeld worden in twee grote categorieën: relationele en niet-relationele databanken.
 
 \subsubsection{Relationele databanken}
-% TODO: 10.21608/EJAI.2022.132961.1002
-Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model \autocite{bron}. 
-De betrouwbarheid van een  realtionele databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd foor \textcite{bron}:
+
+Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model \autocite{Elsabagh2022}.
+De betrouwbaarheid van een  relationele databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd door \textcite{Elsabagh2022}:
 
 \begin{itemize}
     \item \textbf{Atomiciteit}: elke transactie die uitgevoerd wordt, wordt als een ondeelbare eenheid beschouwd. Dit wil zeggen dat een transactie oftewel helemaal, oftewel helemaal niet uitgevoerd wordt.
     \item \textbf{Consistentie}: dit garandeert dat een databank zich voor en na elke transactie in een consistente status bevindt.
     \item \textbf{Isolatie}: dit zorgt er voor dat transacties onafhankelijk van elkaar worden uitgevoerd. Dit wil zeggen dat concurrerende transacties na elkaar uitgevoerd worden.
-    \item \textbf{Duurzaamheid}: nadat een transactie gecommit is, zal deze permament in de databank opgeslagen worden, zelfs in het geval van bijvoorbeeld een systeemcrash of het uitvallen van de stroom. 
+    \item \textbf{Duurzaamheid}: nadat een transactie gecommit is, zal deze permament in de databank opgeslagen worden, zelfs in het geval van bijvoorbeeld een systeemcrash of het uitvallen van de stroom.
 \end{itemize}
 
 \subsubsection{Niet-relationele databanken}
-Niet-realtionele databanken daarintegen zijn schemaloos en kunnen zeer grote hoeveelheden data bevatten. Daarnaast wijken dit type databanken ook af van de ACID- eigenschappen, in die zin dat ze slechts eventuele consistentie kunnen garanderen. Enkele theoretische begrippen bij niet-relationele databanken zijn: BASE en CAP \autocite{bron}.
+Niet-realtionele databanken daarintegen zijn schemaloos en kunnen zeer grote hoeveelheden data bevatten. Daarnaast wijken dit type databanken ook af van de ACID- eigenschappen, in die zin dat ze slechts eventuele consistentie kunnen garanderen. Enkele theoretische begrippen bij niet-relationele databanken zijn: BASE en CAP \autocite{Elsabagh2022}.
 
-BASE staat volgens \textcite{bron} voor:
+BASE staat volgens \textcite{Elsabagh2022} voor:
 
 \begin{itemize}
     \item \textbf{Basically Available}: de databank is altijd beschikbaar, omdat dit type databank meerdere kopieën van de data op meerdere fysieke plaatsen bewaart.
@@ -44,21 +44,20 @@ BASE staat volgens \textcite{bron} voor:
     \item \textbf{Eventual consistency}: de databank zal uiteindelijk consistent worden, maar kan in tussentijd wel inconsistent zijn.
 \end{itemize}
 
-Het CAP-theorama werd voor de eerste keer voorgesteld in 2009 door \textcite{Brewer}. Dit theorema stelt dat het voor een gedistribueerd systeem zeer moeilijk is om tegelijkertijd zowel consistent, beschikbaar als partitie tolerant te zijn. Dit wil zeggen dat een systeel slechts aan één van de twee eigenschappen kan voldoen.
+Het CAP-theorema werd voor de eerste keer voorgesteld in 2009 door \textcite{Simon2012}. Dit theorema stelt dat het voor een gedistribueerd systeem zeer moeilijk is om tegelijkertijd zowel consistent, beschikbaar als partitie tolerant te zijn. Dit wil zeggen dat een systeem slechts aan één van de twee eigenschappen kan voldoen.
 
-De meest voorkomende types van niet-relationele databanken zijn document- kolom- en graafdatabanken en key-value stores \autocite{bron}.
+De meest voorkomende types van niet-relationele databanken zijn document- kolom- en graafdatabanken en key-value stores \autocite{Elsabagh2022}.
 
 \begin{itemize}
-    \item \textbf{Document-databanken}: dit type databank slaat documenten op in JSON-formaat. Volgens \textcite{BRON15} zijn document-databanken het meest voorkomende type niet-relationele databank.
-    \item \textbf{Kolom-databanken}: dit type databank slaat data op in kolommen in plaats van in rijen. Dit wil zeggen dat de gegevens van eenzelfde eigenschap bij elkaar opgeslagen wordt. Op kolom-databanken kunnen geen JOIN-operaties uitgevoerd worden \autocite{BRON15}.
-    \item \textbf{Graafdatbanken}: volgens \textcite{10.21608/EJAI.2022.132961.1002} zijn graafdatabanken de toekomst van databanken. Om data op te slaan, worden vertices (ook wel nodes genoemd) en edges (ook wel relaties genoemd) gebruikt. Zowel nodes en relaties kunnen attributen bevatten. 
+    \item \textbf{Document-databanken}: dit type databank slaat documenten op in JSON-formaat. Volgens \textcite{Sullivan2015} zijn document-databanken het meest voorkomende type niet-relationele databank.
+    \item \textbf{Kolom-databanken}: dit type databank slaat data op in kolommen in plaats van in rijen. Dit wil zeggen dat de gegevens van eenzelfde eigenschap bij elkaar opgeslagen wordt. Op kolom-databanken kunnen geen JOIN-operaties uitgevoerd worden \autocite{Sullivan2015}.
+    \item \textbf{Graafdatabanken}: volgens \textcite{Elsabagh2022} zijn graafdatabanken de toekomst van databanken. Om data op te slaan, worden vertices (ook wel nodes genoemd) en edges (ook wel relaties genoemd) gebruikt. Zowel nodes en relaties kunnen attributen bevatten.
     \item \textbf{Key-value stores}: dit is de simpelste vorm van niet-relationele databanken. Data wordt er opgeslagen in key-value paren, waarbij de key een unieke waarde is waarmee de value opgevraagd kan worden. Deze value kan eender welke datastructuur hebben: bijvoorbeeld een string, een integer of zelfs een afbeelding.
 \end{itemize}
 
 \subsubsection{Keuze van de databank}
 
 Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}.
-Een graafdatabank is een NoSQL-database, ook wel niet-relationele databank genoemd. In dit soort database vormen nodes gekoppeld door relaties samen een verbonden  structuur\footnote{\href{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}}.
 
 Er is in deze situatie gekozen voor een graaf databank omdat er geen databank-schema ontworpen moet worden, wat er voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
 
@@ -77,11 +76,11 @@ De applicatie is opgesteld uit twee basis bouwstenen: een navigatiemenu bovenaan
 Er is tijdens de ontwikkelingsfase ook aandacht besteed aan mobiele gebruikers, zo zal de webapplicatie ook mee schalen wanneer deze van op een kleiner scherm opgeroepen wordt.
 
 \subsection{Dashboard}
-Op het dashboard is de meeste informatie te zien: zowel persoonlijke evolutie over één week en een overzicht van het type uitgevoerde activiteiten (zie figuur \ref{fig:graphs}) als de team en persoonlijke ranking (zie figuur \ref{fig:personalRanking} en \ref{fig:teamRanking}) zijn er te vinden. Dit is het centrale punt voor de gamification.
+Op het dashboard is de meeste informatie te zien: zowel persoonlijke evolutie over één week en een overzicht van het type uitgevoerde activiteiten (zie figuur \ref{fig:graphs}) als de team en persoonlijke ranking (zie figuur \ref{fig:personalRanking} en \ref{fig:teamRanking}) zijn er te vinden. Dit is het centrale punt voor de toepassing van gamificationtechnieken.
 
-De persoonlijke vooruitgang wordt in een grafiek weergegeven, waardoor een gebruiker gestimuleerd kan worden om zichzelf steeds te proberen overtreffen. \linebreak \textcite{Schiewe2020} hebben namelijk aangetoond dat de visualisatie van sportdata sporters op meerdere vlakken ten goede komt, waaronder hun motivatie.
+Zo wordt de persoonlijke vooruitgang in een grafiek weergegeven, waardoor een gebruiker gestimuleerd kan worden om zichzelf steeds te proberen overtreffen. \linebreak \textcite{Schiewe2020} hebben namelijk aangetoond dat de visualisatie van sportdata sporters op meerdere vlakken ten goede komt, waaronder hun motivatie. Dit kan mee verklaard worden door de motivatietheorie van \textcite{Siang2003} (zie \ref{ssec:werking-gamification}), waar bij het zesde niveau van de hiërarchische behoeftepiramide voor gamers het belang van goede graphics wordt benadrukt. Uiteraard valt af te wachten of deze keuze op basis van de literatuur ook bevestigd kan worden voor sedentaire beroepen.
 
-Bij de team- en persoonlijke ranking worden de punten in de vorm van gepresteerde uren weergegeven. Om kleinere teams evenveel kans te geven, houdt de teamranking rekening met de grootte van het team bij de berekening. Concreet wil dit zeggen dat het gemiddeld aantal minuten beweging per gebruiker wordt gebruikt voor deze ranking, in plaats van de absolute som van de gepresteerde minuten van alle gebruikers van een team. Op die manier blijft een eerlijke competitie behouden, wat volgens \textcite{Ivanova2019} de motivatie verhoogt.
+Bij de team- en persoonlijke ranking worden de punten in de vorm van gepresteerde uren weergegeven. Om kleinere teams evenveel kans te geven, houdt de teamranking rekening met de grootte van het team bij de berekening. Concreet wil dit zeggen dat het gemiddeld aantal minuten beweging per gebruiker wordt gebruikt voor deze ranking, in plaats van de absolute som van de gepresteerde minuten van alle gebruikers van een team. Op die manier blijft een eerlijke competitie behouden, wat volgens \textcite{Ivanova2019} de motivatie verhoogt. Een logisch gevolg van de self determination theory van \textcite{Deci1985}, die stellen dat het gevoel van competentie één van de drie fundamenten voor motivatie is, en via de speldynamiek “competitieve elementen” kan worden opgewekt \autocite{Kam2018}.
 
 \begin{figure}[h]
     \caption[Team ranking]{De team ranking, gezien vanop een laptop.}
@@ -120,10 +119,9 @@ Op het persoonlijk overzicht is een lijst van de eigen gepresteerde activiteiten
 
 \subsection{Teamoverzicht}
 
-Dit overzicht is een oplijsting van alle teamleden waartoe de aangemelde gebruiker behoort (zie figuur \ref{fig:team}).
+Dit overzicht is een oplijsting van alle teamleden waartoe de aangemelde gebruiker behoort (zie figuur \ref{fig:team}). Hiermee speelt het ontwikkelde sportplatform in op de bevindingen van \textcite{Kam2018}, die stelden dat via het opzetten van teams de verwantschap en verbondenheid behoefte uit de self determination theory kan worden vervuld  (zie \ref{ssec:werking-gamification}). Dat is een belangrijke voorwaarde om één van de meest besproken psychologische aspecten van gamification, motivatie, te genereren. Daarbij wordt motivatie gezien als de mediator voor het doelgedrag.
 
-In de toekomst zou dit uitgebreid kunnen worden met een overzicht van de prestaties van de gebruikers binnen een team, zodat er ook binnen een team gamification speelt, wat mogelijks tot nog meer motivatie kan leiden.
-Daarnaast zou ook de mogelijkheid toegevoegd kunnen worden om vanuit de applicatie andere mensen uit te nodigen. Zo kunnen reeds deelnemende gebruikers ook hun collega's, vrienden en/of familie uitnodigen.
+Om dit in de toekomst nog te versterken, zou ook de mogelijkheid toegevoegd kunnen worden om vanuit de applicatie andere mensen uit te nodigen. Zo kunnen reeds deelnemende gebruikers ook hun collega's, vrienden en/of familie uitnodigen.
 
 \begin{figure}[h]
     \caption[Overzicht van teamleden]{Overzicht van teamleden in de applicatie, gezien vanop een laptop. Mailadressen zijn onherkenbaar gemaakt om privacy-redenen.}
