@@ -23,8 +23,8 @@ Datbanken kunnen onderverdeeld worden in twee grote categorieën: relationele en
 
 \subsubsection{Relationele databanken}
 % TODO: 10.21608/EJAI.2022.132961.1002
-Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model. 
-De betrouwbarheid van een  realtionele databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd:
+Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model \autocite{bron}. 
+De betrouwbarheid van een  realtionele databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd foor \textcite{bron}:
 
 \begin{itemize}
     \item \textbf{Atomiciteit}: elke transactie die uitgevoerd wordt, wordt als een ondeelbare eenheid beschouwd. Dit wil zeggen dat een transactie oftewel helemaal, oftewel helemaal niet uitgevoerd wordt.
@@ -34,9 +34,9 @@ De betrouwbarheid van een  realtionele databank wordt getoetst met ACID eigensch
 \end{itemize}
 
 \subsubsection{Niet-relationele databanken}
-Niet-realtionele databanken daarintegen zijn schemaloos en kunnen zeer grote hoeveelheden data bevatten. Daarnaast wijken dit type databanken ook af van de ACID- eigenschappen, in die zin dat ze slechts eventuele consistentie kunnen garanderen. Enkele theoretische begrippen bij niet-relationele databanken zijn: BASE en CAP.
+Niet-realtionele databanken daarintegen zijn schemaloos en kunnen zeer grote hoeveelheden data bevatten. Daarnaast wijken dit type databanken ook af van de ACID- eigenschappen, in die zin dat ze slechts eventuele consistentie kunnen garanderen. Enkele theoretische begrippen bij niet-relationele databanken zijn: BASE en CAP \autocite{bron}.
 
-BASE staat voor:
+BASE staat volgens \textcite{bron} voor:
 
 \begin{itemize}
     \item \textbf{Basically Available}: de databank is altijd beschikbaar, omdat dit type databank meerdere kopieën van de data op meerdere fysieke plaatsen bewaart.
@@ -46,7 +46,7 @@ BASE staat voor:
 
 Het CAP-theorama werd voor de eerste keer voorgesteld in 2009 door \textcite{Brewer}. Dit theorema stelt dat het voor een gedistribueerd systeem zeer moeilijk is om tegelijkertijd zowel consistent, beschikbaar als partitie tolerant te zijn. Dit wil zeggen dat een systeel slechts aan één van de twee eigenschappen kan voldoen.
 
-De meest voorkomende types van niet-relationele databanken zijn document- kolom- en graafdatabanken en key-value stores.
+De meest voorkomende types van niet-relationele databanken zijn document- kolom- en graafdatabanken en key-value stores \autocite{bron}.
 
 \begin{itemize}
     \item \textbf{Document-databanken}: dit type databank slaat documenten op in JSON-formaat. Volgens \textcite{BRON15} zijn document-databanken het meest voorkomende type niet-relationele databank.
