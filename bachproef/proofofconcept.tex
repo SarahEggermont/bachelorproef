@@ -17,7 +17,14 @@ De Material UI Core\footnote{\href{https://mui.com/core/}{https://mui.com/core/}
 
 \subsection{Databank}
 
-Een databank is een grote verzameling van gegevens. Een "Database Managemend System" (DBMS) is een systeem waarmee op een georganiseerde manier data beheerd, opgevraagd en opgeslagen kan worden. De betrouwbarheid van een databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd:
+Een databank is een grote verzameling van gegevens. Een "Database Managemend System" (DBMS) is een systeem waarmee op een georganiseerde manier data beheerd, opgevraagd en opgeslagen kan worden. 
+
+Datbanken kunnen onderverdeeld worden in twee grote categorieën: relationele en niet-relationele databanken.
+
+\subsubsection{Relationele databanken}
+% TODO: 10.21608/EJAI.2022.132961.1002
+Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model. 
+De betrouwbarheid van een  realtionele databank wordt getoetst met ACID eigenschappen. Deze eigenschappen worden als volgt gedefinieerd:
 
 \begin{itemize}
     \item \textbf{Atomiciteit}: elke transactie die uitgevoerd wordt, wordt als een ondeelbare eenheid beschouwd. Dit wil zeggen dat een transactie oftewel helemaal, oftewel helemaal niet uitgevoerd wordt.
@@ -26,15 +33,36 @@ Een databank is een grote verzameling van gegevens. Een "Database Managemend Sys
     \item \textbf{Duurzaamheid}: nadat een transactie gecommit is, zal deze permament in de databank opgeslagen worden, zelfs in het geval van bijvoorbeeld een systeemcrash of het uitvallen van de stroom. 
 \end{itemize}
 
-Datbanken kunnen onderverdeeld worden in twee grote categorieën: relationele en niet-relationele databanken.
-Relationele databanken slaan gegevens op aan de hand van tabellen die beschreven staan in een relationeel model. 
+\subsubsection{Niet-relationele databanken}
+Niet-realtionele databanken daarintegen zijn schemaloos en kunnen zeer grote hoeveelheden data bevatten. Daarnaast wijken dit type databanken ook af van de ACID- eigenschappen, in die zin dat ze slechts eventuele consistentie kunnen garanderen. Enkele theoretische begrippen bij niet-relationele databanken zijn: BASE en CAP.
+
+BASE staat voor:
+
+\begin{itemize}
+    \item \textbf{Basically Available}: de databank is altijd beschikbaar, omdat dit type databank meerdere kopieën van de data op meerdere fysieke plaatsen bewaart.
+    \item \textbf{Soft state}: de staat van de databank kan veranderen over de tijd heen.
+    \item \textbf{Eventual consistency}: de databank zal uiteindelijk consistent worden, maar kan in tussentijd wel inconsistent zijn.
+\end{itemize}
+
+Het CAP-theorama werd voor de eerste keer voorgesteld in 2009 door \textcite{Brewer}. Dit theorema stelt dat het voor een gedistribueerd systeem zeer moeilijk is om tegelijkertijd zowel consistent, beschikbaar als partitie tolerant te zijn. Dit wil zeggen dat een systeel slechts aan één van de twee eigenschappen kan voldoen.
+
+De meest voorkomende types van niet-relationele databanken zijn document- kolom- en graafdatabanken en key-value stores.
+
+\begin{itemize}
+    \item \textbf{Document-databanken}: dit type databank slaat documenten op in JSON-formaat. Volgens \textcite{BRON15} zijn document-databanken het meest voorkomende type niet-relationele databank.
+    \item \textbf{Kolom-databanken}: dit type databank slaat data op in kolommen in plaats van in rijen. Dit wil zeggen dat de gegevens van eenzelfde eigenschap bij elkaar opgeslagen wordt. Op kolom-databanken kunnen geen JOIN-operaties uitgevoerd worden \autocite{BRON15}.
+    \item \textbf{Graafdatbanken}: volgens \textcite{10.21608/EJAI.2022.132961.1002} zijn graafdatabanken de toekomst van databanken. Om data op te slaan, worden vertices (ook wel nodes genoemd) en edges (ook wel relaties genoemd) gebruikt. Zowel nodes en relaties kunnen attributen bevatten. 
+    \item \textbf{Key-value stores}: dit is de simpelste vorm van niet-relationele databanken. Data wordt er opgeslagen in key-value paren, waarbij de key een unieke waarde is waarmee de value opgevraagd kan worden. Deze value kan eender welke datastructuur hebben: bijvoorbeeld een string, een integer of zelfs een afbeelding.
+\end{itemize}
+
+\subsubsection{Keuze van de databank}
 
 Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}.
 Een graafdatabank is een NoSQL-database, ook wel niet-relationele databank genoemd. In dit soort database vormen nodes gekoppeld door relaties samen een verbonden  structuur\footnote{\href{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}{https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/graphdb-vs-rdbms/}}.
 
 Er is in deze situatie gekozen voor een graaf databank omdat er geen databank-schema ontworpen moet worden, wat er voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
 
-Daarnaast zal de analyse van de ingegeven sportdata ook efficiënter verlopen: er zullen geen complexe join-operaties aan te pas komen om bijvoorbeeld alle activiteiten van de deelnemers van een team op te vragen, wat bij een SQL-databank wel het geval zou zijn. Dit komt de kwaliteit van de analyse ten goede.
+Daarnaast zal de analyse van de ingegeven sportdata ook efficiënter verlopen: er zullen geen complexe join-operaties aan te pas komen om bijvoorbeeld alle activiteiten van de deelnemers van een team op te vragen, wat bij een relationele databank wel het geval zou zijn. Dit komt de kwaliteit van de analyse ten goede.
 
 \subsection{Deployment}
 
