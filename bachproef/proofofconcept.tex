@@ -59,9 +59,9 @@ De meest voorkomende types van niet-relationele databanken zijn document- kolom-
 
 Deze applicatie gebruikt een graafdatabank, meer specifiek Neo4J\footnote{\href{https://neo4j.com/}{https://neo4j.com/}}.
 
-Er is in deze situatie gekozen voor een graaf databank omdat er geen databank-schema ontworpen moet worden, wat er voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
+Er is in deze situatie gekozen voor een graafdatabank omdat er, zoals net beschreven, dan geen databank-schema ontworpen moet worden, wat er voor zorgt dat het mogelijk is om snel te ontwikkelen en gaandeweg eventueel zaken aan te passen indien nodig.
 
-Daarnaast zal de analyse van de ingegeven sportdata ook efficiënter verlopen: er zullen geen complexe join-operaties aan te pas komen om bijvoorbeeld alle activiteiten van de deelnemers van een team op te vragen, wat bij een relationele databank wel het geval zou zijn. Dit komt de kwaliteit van de analyse ten goede.
+Daarnaast zal de analyse van de ingegeven sportdata ook efficiënter verlopen. Door het gebruik van nodes en vertices zullen er geen complexe join-operaties aan te pas komen om bijvoorbeeld alle activiteiten van de deelnemers van een team op te vragen, wat bij een relationele databank wel het geval zou zijn. Dit komt de kwaliteit van de analyse ten goede.
 
 \subsection{Deployment}
 
@@ -89,7 +89,7 @@ Bij de team- en persoonlijke ranking worden de punten in de vorm van gepresteerd
 \end{figure}
 
 \begin{figure}[h]
-    \caption[Persoonlijke ranking]{De persoonlijke ranking, gezien vanop een laptop.}
+    \caption[Persoonlijke ranking]{De persoonlijke ranking, gezien vanop een laptop. De achternamen van de gebruikers zijn onherkenbaar gemaakt om privacy-redenen.}
     \includegraphics[width=1\textwidth]{PersonalRanking}
     \label{fig:personalRanking}
 \end{figure}
